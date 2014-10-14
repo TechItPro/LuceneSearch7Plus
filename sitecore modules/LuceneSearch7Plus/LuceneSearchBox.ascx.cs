@@ -16,6 +16,8 @@ namespace Search.UI.LuceneSearch
             masterDB = Factory.GetDatabase("master");
             if (!IsPostBack)
                 txtCriteria.Text = CommonText.get("search");
+
+           
         }
 
         protected void btnSearch_Click(object sender, ImageClickEventArgs e)

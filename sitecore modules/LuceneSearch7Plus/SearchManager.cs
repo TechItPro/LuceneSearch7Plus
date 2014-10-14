@@ -93,8 +93,17 @@ namespace Search.UI.LuceneSearch
             //Getting index from the web.config
             List<Item> returnValues = new List<Item>();
             SearchIndexName = StringUtil.GetString(SearchIndexName, CommonText.get("Search Index")); ;
-            var searchIndex = ContentSearchManager.GetIndex(SearchIndexName);
+            ISearchIndex searchIndex = null;
+            try
+            {
+                searchIndex = ContentSearchManager.GetIndex(SearchIndexName);
+            }
+            catch (Exception ex)
+            {
 
+                Log.Error(ex.Message, ex);
+                return null;
+            }
             using (var context = searchIndex.CreateSearchContext())
             {                
                 var predicate = BuildPredicate(searchString);

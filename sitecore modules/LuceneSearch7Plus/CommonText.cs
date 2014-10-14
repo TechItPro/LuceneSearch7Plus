@@ -26,7 +26,7 @@ namespace Search.UI.LuceneSearch
 
         public static string get(string name)
         {
-            Item commonText = masterDB.GetItem("/sitecore/content/settings/common text/" + name);
+            Item commonText = masterDB.GetItem("/sitecore/content/Lucene Search Settings/common text/" + name);
             return commonText == null ? null : commonText["text"];
         }
     }//class

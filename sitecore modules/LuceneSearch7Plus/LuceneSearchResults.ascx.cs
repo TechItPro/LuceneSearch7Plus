@@ -36,6 +36,7 @@ namespace Search.UI.LuceneSearch
         {
             string indexName = StringUtil.GetString(IndexName, CommonText.get("Search Index"));
 
+
             // Decode the search string query string
             string searchStr = searchKeyword;
 
